@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+}
+.header h1 {
+    font-size: 6vw;
+}
+
+.card-background {
+    background-color: #363636;
+}
+.card-image {
+    height: 200px; 
+    padding: 0;
+}
+.card-image > img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.informacoes {
+    line-height: 1;
+}
