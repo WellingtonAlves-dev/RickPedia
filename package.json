@@ -1,0 +1,23 @@
+{
+  "name": "pratica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "dev": "concurrently --kill-others \"npm run watch\" \"nodemon\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
