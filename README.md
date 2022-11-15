@@ -1,0 +1,2 @@
+# RickPedia
+Praticando o typescript
