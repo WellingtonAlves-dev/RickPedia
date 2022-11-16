@@ -1,12 +1,20 @@
 export class Character {
-    constructor(name, gender, status, img) {
+    constructor(id, name, gender, status, img, episodes = []) {
+        this.id = id;
         this.name = name;
         this.gender = gender;
         this.status = status;
         this.img = img;
+        this._episodes = episodes;
     }
     set img(value) {
         this._img = value;
+    }
+    get img() {
+        return this._img;
+    }
+    get episodes() {
+        return this._episodes;
     }
     set gender(value) {
         let generos = {
@@ -29,21 +37,5 @@ export class Character {
     }
     get status() {
         return this._status;
-    }
-    generateCard() {
-        return `
-            <div class="col-lg-5 m-3 shadow card-background">
-                <div class="row no-gutters">
-                    <div class="col-4 card-image">
-                        <img src="${this._img}"/>
-                    </div>
-                    <div class="col-8 p-3 text-white lg-1">
-                        <h3>${this.name}</h3>
-                        <p>Status: <strong>${this._status}</strong></p>
-                        <p>Genero: <strong>${this.gender}</strong></p>
-                    </div>
-                </div>
-            </div>
-        `;
     }
 }

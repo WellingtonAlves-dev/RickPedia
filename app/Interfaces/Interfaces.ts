@@ -9,9 +9,20 @@ export interface IInfoApi {
     pages: number
 }
 export interface IApiCharacteres {
-    id: Number,
+    id: number,
     gender: string,
     image: string,
     name: string,
     status: string,   
+    episode: string[]
+}
+
+export interface IResultsEps {
+    info: IInfoApi,
+    results: Array<IEpisode>
+}
+export interface IEpisode {
+    id: number,
+    name: string,
+    episode: string
 }

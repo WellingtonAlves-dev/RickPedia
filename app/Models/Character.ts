@@ -1,18 +1,30 @@
 export class Character {
     public readonly name: String;
+    public readonly id: number;
     private _gender: string;
     private _status: string;
     private _img: String;
-    
-    constructor(name: string, gender: string, status: string, img: string) {
+    private _episodes: string[];
+
+    constructor(id: number, name: string, gender: string, status: string, img: string, episodes: string[] = []) {
+        this.id = id;
         this.name = name;
         this.gender = gender;
         this.status = status;
         this.img = img;
+        this._episodes = episodes;
     }
     set img(value: String) {
         this._img = value;
     }
+    get img() {
+        return this._img;
+    }
+
+    get episodes() {
+        return this._episodes;
+    }
+
     set gender(value: string) {
         let generos : {[key: string] : string} = {
             'Female': "Feminino",
@@ -36,22 +48,5 @@ export class Character {
     }
     get status() : string {
         return this._status;
-    }
-
-    generateCard(): String {
-        return `
-            <div class="col-lg-5 m-3 shadow card-background">
-                <div class="row no-gutters">
-                    <div class="col-4 card-image">
-                        <img src="${this._img}"/>
-                    </div>
-                    <div class="col-8 p-3 text-white lg-1">
-                        <h3>${this.name}</h3>
-                        <p>Status: <strong>${this._status}</strong></p>
-                        <p>Genero: <strong>${this.gender}</strong></p>
-                    </div>
-                </div>
-            </div>
-        `;
     }
 }
